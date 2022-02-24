@@ -9,14 +9,20 @@ public class Enemy : MonoBehaviour
 
     private int _currentHealth;
 
-    private void Die()
+    private void Start()
     {
-        Instantiate(_diedEffect, transform);
+        _currentHealth = _maxHealth;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void Die()
     {
-        if (collision.gameObject.TryGetComponent(out Bullet bullet))
+        Instantiate(_diedEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Bullet bullet))
         {
             ChangeHealth(bullet.Damage);
         }

@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * _speed);
+        transform.Translate(Vector3.right * Time.deltaTime * _speed);
         CurrentTimeLife += Time.deltaTime;
 
         if (CurrentTimeLife >= _timeLife)

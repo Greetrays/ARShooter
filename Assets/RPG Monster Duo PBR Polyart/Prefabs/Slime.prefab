@@ -99,8 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b36ae21d60898d4c9ae2f31fe698210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _diedEffect: {fileID: 0}
-  _maxHealth: 0
+  _diedEffect: {fileID: 8435649054638598389, guid: f76c31dd81bd24645a3c6b950117e025,
+    type: 3}
+  _maxHealth: 1
 --- !u!135 &7293281316278903011
 SphereCollider:
   m_ObjectHideFlags: 0
