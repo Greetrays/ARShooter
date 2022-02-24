@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private Enemy _template;
+    [SerializeField] private Enemy[] _enemys;
     [SerializeField] private Player _player;
     [SerializeField] private int _spawnRadius;
     [SerializeField] private float _spawnSecondsDelay;
@@ -18,9 +18,9 @@ public class Spawner : MonoBehaviour
     {
         while(true)
         {
-            var obj = Instantiate(_template, _player.transform.position + GetShperePosition(), Quaternion.identity);
-            Vector3 lookRotation = _player.transform.position - obj.transform.position;
-            obj.transform.rotation = Quaternion.LookRotation(lookRotation);
+            var newEnemy = Instantiate(_enemys[Random.Range(0, _enemys.Length)], _player.transform.position + GetShperePosition(), Quaternion.identity);
+            Vector3 lookRotation = _player.transform.position - newEnemy.transform.position;
+            newEnemy.transform.rotation = Quaternion.LookRotation(lookRotation);
             yield return new WaitForSeconds(_spawnSecondsDelay);
         }
     }
