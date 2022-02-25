@@ -61,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 1090219386143568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.041, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4491811072490378}
   - {fileID: 4835855552950442}
@@ -102,6 +102,7 @@ MonoBehaviour:
   _diedEffect: {fileID: 8435649054638598389, guid: f76c31dd81bd24645a3c6b950117e025,
     type: 3}
   _maxHealth: 1
+  _reward: 1
 --- !u!135 &7293281316278903011
 SphereCollider:
   m_ObjectHideFlags: 0

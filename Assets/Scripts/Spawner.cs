@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Spawner : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Player _player;
     [SerializeField] private int _spawnRadius;
     [SerializeField] private float _spawnSecondsDelay;
+
+    public event UnityAction<int> DiedEnemy;
 
     private void Start()
     {
@@ -21,8 +24,15 @@ public class Spawner : MonoBehaviour
             var newEnemy = Instantiate(_enemys[Random.Range(0, _enemys.Length)], _player.transform.position + GetShperePosition(), Quaternion.identity);
             Vector3 lookRotation = _player.transform.position - newEnemy.transform.position;
             newEnemy.transform.rotation = Quaternion.LookRotation(lookRotation);
+            newEnemy.Died += OnDied;
             yield return new WaitForSeconds(_spawnSecondsDelay);
         }
+    }
+
+    private void OnDied(int reward, Enemy enemy)
+    {
+        DiedEnemy?.Invoke(reward);
+        enemy.Died -= OnDied;
     }
 
     private Vector3 GetShperePosition()
