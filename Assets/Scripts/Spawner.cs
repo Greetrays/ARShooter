@@ -25,6 +25,7 @@ public class Spawner : MonoBehaviour
             Vector3 lookRotation = _player.transform.position - newEnemy.transform.position;
             newEnemy.transform.rotation = Quaternion.LookRotation(lookRotation);
             newEnemy.Died += OnDied;
+            newEnemy.TargetInit(_player);
             yield return new WaitForSeconds(_spawnSecondsDelay);
         }
     }
@@ -37,6 +38,7 @@ public class Spawner : MonoBehaviour
 
     private Vector3 GetShperePosition()
     {
-        return Random.insideUnitSphere * _spawnRadius;
+        Vector3 distanceFromPlayer = Vector3.one * 3;
+        return distanceFromPlayer + Random.insideUnitSphere * _spawnRadius;
     }
 }

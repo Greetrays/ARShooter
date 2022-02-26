@@ -30,7 +30,6 @@ public class ScorePanel : MonoBehaviour
     private void OnDiedEnemy(int reward)
     {
         _currentScore += reward;
-        Debug.Log(reward);
         _score.text = _currentScore.ToString();
     }
 }
