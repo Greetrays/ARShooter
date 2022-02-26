@@ -50,6 +50,8 @@ GameObject:
   - component: {fileID: -3672071122565759141}
   - component: {fileID: -7668681212312126265}
   - component: {fileID: 5206711097334530208}
+  - component: {fileID: -6726696231158294536}
+  - component: {fileID: -5125097397083930785}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -136,7 +138,7 @@ MonoBehaviour:
   _diedEffect: {fileID: 8435649054638598389, guid: f76c31dd81bd24645a3c6b950117e025,
     type: 3}
   _reward: 1
-  _damage: 5
+  _damage: 2
 --- !u!114 &-3844853268911581521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,8 +177,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c8216da814a734084db8e99eb60f7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitions: []
-  _delay: 5
+  _transitions:
+  - {fileID: -6726696231158294536}
+  _delay: 1
 --- !u!114 &-7668681212312126265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 5206711097334530208}
+  - {fileID: -6726696231158294536}
   _speed: 0.005
 --- !u!114 &5206711097334530208
 MonoBehaviour:
@@ -205,6 +209,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: -3672071122565759141}
+--- !u!114 &-6726696231158294536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090219386143568}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b0b6baf31af5c4ab088d9e77146003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetState: {fileID: -5125097397083930785}
+--- !u!114 &-5125097397083930785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090219386143568}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d0f69cd079bae4281a5b6f5757367f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitions: []
 --- !u!1 &1159745215084782
 GameObject:
   m_ObjectHideFlags: 0

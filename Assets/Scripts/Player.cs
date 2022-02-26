@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] private int _maxHealth;
 
     private int _currentHealth;
+
+    public event UnityAction Died;
 
     private void OnValidate()
     {
@@ -27,6 +30,7 @@ public class Player : MonoBehaviour
 
         if (_currentHealth <= 0)
         {
+            Died?.Invoke();
             Debug.Log("Вы проиграли!");
         }
     }

@@ -12,7 +12,9 @@ public abstract class State : MonoBehaviour
 
     public void Enter(Player target)
     {
-        if(enabled == false)
+        EnemyAnimator = GetComponent<Animator>();
+
+        if (enabled == false)
         {
             Target = target;
             enabled = true;
@@ -46,7 +48,7 @@ public abstract class State : MonoBehaviour
 
             foreach (var transition in _transitions)
             {
-                transition.enabled = true;
+                transition.enabled = false;
             }
         }
     }

@@ -567,7 +567,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _enemys:
   - {fileID: 7918616802886901034, guid: a817c29ea6847604bb2c6c51d9a74bf1, type: 3}
-  - {fileID: -3407179610384331775, guid: 3aec22b5d3f3c2947bb81040b56e5f96, type: 3}
   _player: {fileID: 2134633655}
   _spawnRadius: 10
   _spawnSecondsDelay: 5
@@ -1028,7 +1027,7 @@ GameObject:
   - component: {fileID: 2134633653}
   - component: {fileID: 2134633655}
   m_Layer: 0
-  m_Name: AR Session Origin
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1074,7 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926916ee1b13df54f8657421815cf480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
+  _maxHealth: 5
 --- !u!1001 &9115859939847463205
 PrefabInstance:
   m_ObjectHideFlags: 0
