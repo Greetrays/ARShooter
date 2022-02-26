@@ -14,5 +14,6 @@ public class TargetDieTransition : Transition
     private void OnDied()
     {
         NeedTransit = true;
+        Target.Died -= OnDied;
     }
 }

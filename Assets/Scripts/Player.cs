@@ -10,6 +10,9 @@ public class Player : MonoBehaviour
     private int _currentHealth;
 
     public event UnityAction Died;
+    public event UnityAction<int> ChangedHealth;
+
+    public int MaxHealth => _maxHealth;
 
     private void OnValidate()
     {
@@ -27,6 +30,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _currentHealth -= damage;
+        ChangedHealth?.Invoke(_currentHealth);
 
         if (_currentHealth <= 0)
         {

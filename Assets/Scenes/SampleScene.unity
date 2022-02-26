@@ -777,7 +777,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 110
+  m_fontSize: 93.6
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -937,6 +937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1990936903}
   - component: {fileID: 1990936904}
+  - component: {fileID: 1990936905}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -1015,6 +1016,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1990936905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990936902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9373743ba9fc55442992707347e06693, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 2134633655}
+  _healthBar: {fileID: 1990936904}
 --- !u!1 &2134633652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,7 +1088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 926916ee1b13df54f8657421815cf480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 5
+  _maxHealth: 100
 --- !u!1001 &9115859939847463205
 PrefabInstance:
   m_ObjectHideFlags: 0
